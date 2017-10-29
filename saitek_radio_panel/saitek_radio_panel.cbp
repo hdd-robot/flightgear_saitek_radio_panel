@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="saitek_radio_panel" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/saitek_radio_panel" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/saitek_radio_panel" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Makefile" />
+		<Unit filename="README" />
+		<Unit filename="saitek.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="saitek.h" />
+		<Unit filename="saitek_radio_panel.cbp" />
+		<Unit filename="saitek_radio_panel.layout" />
+		<Unit filename="socket_fg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="socket_fg.h" />
+		<Unit filename="stkmanager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stkmanager.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
