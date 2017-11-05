@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<generic>
+
+		<input>
+			<line_separator>\n</line_separator>
+			<var_separator>,</var_separator>
+			<!-- TOP -->
+			<!-- COM1 -->
+			<chunk>
+				<name>top_com1_sw</name>
+				<node>saitek_radio_panel/top_com1_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>top_com1_inc</name>
+				<node>/saitek_radio_panel/top_com1_inc</node>
+			</chunk>
+			
+			<!-- COM2 -->
+			<chunk>
+				<name>top_com2_sw</name>
+				<node>saitek_radio_panel/top_com2_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>top_com2_inc</name>
+				<node>/saitek_radio_panel/top_com2_inc</node>
+			</chunk>
+			
+			<!-- NAV1 -->
+			<chunk>
+				<name>top_nav1_sw</name>
+				<node>saitek_radio_panel/top_nav1_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>top_nav1_inc</name>
+				<node>/saitek_radio_panel/top_nav1_inc</node>
+			</chunk>
+			
+			<!-- NAV2 -->
+			<chunk>
+				<name>top_nav2_sw</name>
+				<node>saitek_radio_panel/top_nav2_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>top_nav2_inc</name>
+				<node>/saitek_radio_panel/top_nav2_inc</node>
+			</chunk>
+			
+			<!-- ADF -->
+			<chunk>
+				<name>top_adf_sw</name>
+				<node>saitek_radio_panel/top_adf_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>top_adf_inc</name>
+				<node>/saitek_radio_panel/top_adf_inc</node>
+			</chunk>
+			
+			<!-- DME -->
+			<chunk>
+				<name>top_dme_sw</name>
+				<node>saitek_radio_panel/top_dme_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>top_dme_inc</name>
+				<node>/saitek_radio_panel/top_dme_inc</node>
+			</chunk>
+			
+			<!-- XPDR -->
+			<chunk>
+				<name>top_xpdr_sw</name>
+				<node>saitek_radio_panel/top_xpdr_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>top_xpdr_inc</name>
+				<node>/saitek_radio_panel/top_xpdr_inc</node>
+			</chunk>
+			
+			
+			<!-- BOT -->
+			<!-- COM1 -->
+			<chunk>
+				<name>bot_com1_sw</name>
+				<node>saitek_radio_panel/bot_com1_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>bot_com1_inc</name>
+				<node>/saitek_radio_panel/bot_com1_inc</node>
+			</chunk>
+			
+			<!-- COM2 -->
+			<chunk>
+				<name>bot_com2_sw</name>
+				<node>saitek_radio_panel/bot_com2_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>bot_com2_inc</name>
+				<node>/saitek_radio_panel/bot_com2_inc</node>
+			</chunk>
+			
+			<!-- NAV1 -->
+			<chunk>
+				<name>bot_nav1_sw</name>
+				<node>saitek_radio_panel/bot_nav1_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>bot_nav1_inc</name>
+				<node>/saitek_radio_panel/bot_nav1_inc</node>
+			</chunk>
+			
+			<!-- NAV2 -->
+			<chunk>
+				<name>bot_nav2_sw</name>
+				<node>saitek_radio_panel/bot_nav2_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>bot_nav2_inc</name>
+				<node>/saitek_radio_panel/bot_nav2_inc</node>
+			</chunk>
+			
+			<!-- ADF -->
+			<chunk>
+				<name>bot_adf_sw</name>
+				<node>saitek_radio_panel/bot_adf_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>bot_adf_inc</name>
+				<node>/saitek_radio_panel/bot_adf_inc</node>
+			</chunk>
+			
+			<!-- DME -->
+			<chunk>
+				<name>bot_dme_sw</name>
+				<node>saitek_radio_panel/bot_dme_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>bot_dme_inc</name>
+				<node>/saitek_radio_panel/bot_dme_inc</node>
+			</chunk>
+			
+			<!-- XPDR -->
+			<chunk>
+				<name>bot_xpdr_sw</name>
+				<node>saitek_radio_panel/bot_xpdr_sw</node>
+			</chunk>
+
+			<chunk>
+				<name>bot_xpdr_inc</name>
+				<node>/saitek_radio_panel/bot_xpdr_inc</node>
+			</chunk>
+		</input>
+	</generic>
+</PropertyList>

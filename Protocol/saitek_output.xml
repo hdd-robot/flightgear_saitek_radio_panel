@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<generic>
+		<output>
+			<line_separator>newline</line_separator>
+			<var_separator>,</var_separator>
+			<binary_mode>false</binary_mode>
+
+			<!-- COM1 STANDBY -->
+			<chunk>
+				<name>com1stb</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/comm/frequencies/standby-mhz-fmt</node>
+			</chunk>
+
+			<!-- COM1 ACTIVE -->
+			<chunk>
+				<name>com1a</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/comm/frequencies/selected-mhz-fmt</node>
+			</chunk>
+
+			<!-- COM2 STANDBY -->
+			<chunk>
+				<name>com2stb</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/comm[1]/frequencies/standby-mhz-fmt</node>
+			</chunk>
+
+			<!-- COM2 ACTIVE -->
+			<chunk>
+				<name>com2a</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/comm[1]/frequencies/selected-mhz-fmt</node>
+			</chunk>
+
+			<!-- NAV1 STANDBY -->
+			<chunk>
+				<name>nav1stb</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/nav/frequencies/standby-mhz-fmt</node>
+			</chunk>
+
+			<!-- NAV1 ACTIVE -->
+			<chunk>
+				<name>nav1a</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/nav/frequencies/selected-mhz-fmt</node>
+			</chunk>
+
+			<!-- NAV2 STANDBY -->
+			<chunk>
+				<name>nav2stb</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/nav[1]/frequencies/standby-mhz-fmt</node>
+			</chunk>
+
+			<!-- NAV2 ACTIVE -->
+			<chunk>
+				<name>nav2a</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/nav[1]/frequencies/selected-mhz-fmt</node>
+			</chunk>
+
+
+			<!-- ADF STANDBY -->
+			<chunk>
+				<name>adfstb</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/adf/frequencies/standby-khz</node>
+			</chunk>
+
+			<!-- ADF ACTIVE -->
+			<chunk>
+				<name>adfa</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/adf/frequencies/selected-khz</node>
+			</chunk>
+
+			<!-- DME -->
+			<chunk>
+				<name>dme</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/dme/indicated-distance-nm</node>
+			</chunk>
+
+			<!-- XPDR -->
+			<chunk>
+				<name>xpdr</name>
+				<format>%s</format>
+				<type>string</type>
+				<node>/instrumentation/transponder/id-code</node>
+			</chunk>
+
+
+		</output>
+	</generic>
+</PropertyList>

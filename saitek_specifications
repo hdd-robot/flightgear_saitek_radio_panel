@@ -1,0 +1,87 @@
+
+
+Writing Data in Saitek radio panel : 
+====================================
+
+   ____________________________________________________________________________
+   |   . .       __________________    __________________                     |
+   |  . \        |                |    |                |             _____   |
+   |  .  O       | B4 B3 B2 B1 B0 |    | A4 A3 A2 A1 A0 |     o-O    | <-> |  |
+   |             |________________|    |________________|                     |
+   |                                                                          |
+   |                   ACTIVE               STANDBY                           |
+   |   . .       __________________    __________________                     |
+   |  . \        |                |    |                |             _____   |
+   |  .  0       | D4 D3 D2 D1 D0 |    | C4 C3 C2 C1 C0 |     o-O    | <-> |  |
+   |             |________________|    |________________|                     |
+   |___________________________________________________________________Saitek_|
+   
+   
+     
+    ___
+   |   |
+   |___|
+   |   |
+   |___|
+     
+     |
+     |-> 0 = 0x00
+         1 = 0x01
+         2 = 0x02
+         3 = 0x03
+         4 = 0x04
+         5 = 0x05
+         6 = 0x06
+         7 = 0x07
+         8 = 0x08
+         9 = 0x09
+   (void)_ = 0x0A to 0x0F
+        X. = X+ 0xD0 (number with dicimal point)
+         
+   
+   
+   for shwing information you whent sent bytes in this order : 
+    
+   A B C D
+   
+
+
+Rading Data in Saitek radio panel:
+==================================
+ When reading the file in /dev/hidrawX, you whent read 3 bytes
+ 
+
+	   byte 0     	      byte 1             byte 2
+  ______/\_______    ______/\_______    ______/\_______
+ / 	             \  /               \  / 	           \
+  
+ |_|_|_|_|_|_|_|_|  |_|_|_|_|_|_|_|_|  |_|_|_|_|_|_|_|_|
+  | | | | | | | |    | | | | | | | |    | | | | | | | |-> TOP ROTARY ENCODER DECIMAL INC (++)
+  | | | | | | | |    | | | | | | | |    | | | | | | |---> TOP ROTARY ENCODER DECIMAL DEC (--)
+  | | | | | | | |    | | | | | | | |    | | | | | |-----> TOP ROTARY ENCODER INC (++)
+  | | | | | | | |    | | | | | | | |    | | | | |-------> TOP ROTARY ENCODER DEC (--)
+  | | | | | | | |    | | | | | | | |    | | | |---------> BOTTOM ROTARY ENCODER DECIMAL INC (++)
+  | | | | | | | |    | | | | | | | |    | | |-----------> BOTTOM ROTARY ENCODER DECIMAL DEC (--)
+  | | | | | | | |    | | | | | | | |    | |-------------> BOTTOM ROTARY ENCODER INC (++)
+  | | | | | | | |    | | | | | | | |    |---------------> BOTTOM ROTARY ENCODER DEC (--)
+  | | | | | | | |    | | | | | | | | 
+  | | | | | | | |    | | | | | | | |-> BOTTOM COM2
+  | | | | | | | |    | | | | | | |---> BOTTOM NAV1
+  | | | | | | | |    | | | | | |-----> BOTTOM NAV2
+  | | | | | | | |    | | | | |-------> BOTTOM ADF
+  | | | | | | | |    | | | |---------> BOTTOM DME
+  | | | | | | | |    | | |-----------> BOTTOM XPDR
+  | | | | | | | |    | |-------------> TOP SWITCH
+  | | | | | | | |    |---------------> BOTTOM SWITCH
+  | | | | | | | |  
+  | | | | | | | |-> TOP COM1
+  | | | | | | |---> TOP COM2
+  | | | | | |-----> TOP NAV1
+  | | | | |-------> TOP NAV2
+  | | | |---------> TOP ADF
+  | | |-----------> TOP DME
+  | |-------------> TOP XPDR
+  |---------------> BOTTOM COM1                                                     
+                                                      
+  					 
+  

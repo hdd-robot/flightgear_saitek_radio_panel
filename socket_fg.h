@@ -2,8 +2,10 @@
  * socket_fg.h
  *
  *  Created on: 16 mai 2016
- *      Author: thor
+ *      Author: Halim DJERROUD
+ *      email : hdd@ai.univ-paris8.fr
  */
+
 
 #ifndef SOCKET_FG_H_
 #define SOCKET_FG_H_
@@ -15,22 +17,13 @@
 #include<sys/socket.h>
 #include "saitek.h"
 
-#define COM1    1
-#define COM2    2
-#define NAV1    3
-#define NAV2    4
-#define ADF     5
-#define DME     6
-#define XPDR    7
-
 
 #define BUFLEN 512  //Max length of buffer
-#define PORT 49001   //The port on which to listen for incoming data
-
-int connectFG(int);
+#define PORT_IN 49001   	//The port on which to listen for incoming data
+#define PORT_OUT 49002  //The port on which WRITE  for modified data
+#define SERVER "127.0.0.1" //server
 struct dataFG readDataFG(void);
-int desconnectFG(int);
-
+void writeDataFG(struct dataFG , struct dataSTK );
 
 
 #endif /* SOCKET_FG_H_ */
