@@ -17,7 +17,7 @@ clean :
 
 $(EXEC_NAME) : $(OBJ_FILES)
 	$(CC) -o $(EXEC_NAME)  $(OBJ_FILES)  $(LIBS)
-
+	cp $(EXEC_NAME) ../bin/
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
