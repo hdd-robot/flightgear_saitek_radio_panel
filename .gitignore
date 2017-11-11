@@ -1,3 +1,7 @@
 *~
 *.o
 *.gch
+.cproject
+.settings
+.project
+/Debug/

@@ -11,7 +11,7 @@ const char * bus_str(int bus);
 
 int fd;
 int i, res, desc_size = 0;
-char buf[256];
+unsigned char buf[256];
 struct hidraw_report_descriptor rpt_desc;
 struct hidraw_devinfo info;
 char *device = "/dev/hidraw0";
@@ -115,16 +115,19 @@ int initStk(int argc, char *argv[]) {
 	return 0;
 }
 
-void freqToBuf(char* entier, char* decimal, char* buffer) {
+void freqToBuf(char* entier, char* decimal, unsigned char* buffer) {
 
 	// printf(" %c , %c , %c .  %c , %c \n ",entier[0],entier[1],entier[2],decimal[0],decimal[1]);
 
 	buffer[0] = entier[0] - '0';
 	buffer[1] = entier[1] - '0';
-	buffer[2] = (entier[2] - '0') + 208;
+	buffer[2] = abs((entier[2] - '0') + 0xD0);
+
 
 	buffer[3] = decimal[0] - '0';
 	buffer[4] = decimal[1] - '0';
+
+
 }
 
 
@@ -133,12 +136,21 @@ void freqToDME(char* entier, char* decimal, char* buffer) {
 }
 
 
-void freqToXPDR(char* entier, char* buffer) {
+void freqToXPDR(char* entier, unsigned char* buffer) {
 	buffer[0] = entier[0] - '0';
 	buffer[1] = entier[1] - '0';
 	buffer[2] = entier[2] - '0';
 	buffer[3] = entier[3] - '0';
 
+}
+
+void fgStrCpy(unsigned char src[], unsigned char dest[],int size){
+
+	int i = 0;
+	while (i < size){
+		src[i] = dest[i];
+		i++;
+	}
 }
 
 int writeDataStk(struct dataFG datafg, struct dataSTK datastk) {
@@ -148,98 +160,98 @@ int writeDataStk(struct dataFG datafg, struct dataSTK datastk) {
 	// le premier bit peut etre 1 ou A // A pour ne rien afficher // ne peut etre 0, ni 2-9
 
 	if (datastk.topCom1 == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.com1, datafg.com1d, buffer);
-		strncpy(&buf[0], buffer, 5);
+		fgStrCpy(&buf[0], buffer, 5);
 		freqToBuf(datafg.com1stb, datafg.com1stbd, buffer);
-		strncpy(&buf[5], buffer, 5);
+		fgStrCpy(&buf[5], buffer, 5);
 	}
 
 	if (datastk.botCom1 == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.com1, datafg.com1d, buffer);
-		strncpy(&buf[10], buffer, 5);
+		fgStrCpy(&buf[10], buffer, 5);
 		freqToBuf(datafg.com1stb, datafg.com1stbd, buffer);
-		strncpy(&buf[15], buffer, 5);
+		fgStrCpy(&buf[15], buffer, 5);
 
 	}
 
 	if (datastk.topCom2 == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.com2, datafg.com2d, buffer);
-		strncpy(&buf[0], buffer, 5);
+		fgStrCpy(&buf[0], buffer, 5);
 		freqToBuf(datafg.com2stb, datafg.com2stbd, buffer);
-		strncpy(&buf[5], buffer, 5);
+		fgStrCpy(&buf[5], buffer, 5);
 	}
 
 	if (datastk.botCom2 == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.com2, datafg.com2d, buffer);
-		strncpy(&buf[10], buffer, 5);
+		fgStrCpy(&buf[10], buffer, 5);
 		freqToBuf(datafg.com2stb, datafg.com2stbd, buffer);
-		strncpy(&buf[15], buffer, 5);
+		fgStrCpy(&buf[15], buffer, 5);
 	}
 
 	if (datastk.topNav1 == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.nav1, datafg.nav1d, buffer);
-		strncpy(&buf[0], buffer, 5);
+		fgStrCpy(&buf[0], buffer, 5);
 		freqToBuf(datafg.nav1stb, datafg.nav1stbd, buffer);
-		strncpy(&buf[5], buffer, 5);
+		fgStrCpy(&buf[5], buffer, 5);
 	}
 
 	if (datastk.botNav1 == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.nav1, datafg.nav1d, buffer);
-		strncpy(&buf[10], buffer, 5);
+		fgStrCpy(&buf[10], buffer, 5);
 		freqToBuf(datafg.nav1stb, datafg.nav1stbd, buffer);
-		strncpy(&buf[15], buffer, 5);
+		fgStrCpy(&buf[15], buffer, 5);
 	}
 
 	if (datastk.topNav2 == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.nav2, datafg.nav2d, buffer);
-		strncpy(&buf[0], buffer, 5);
+		fgStrCpy(&buf[0], buffer, 5);
 		freqToBuf(datafg.nav2stb, datafg.nav2stbd, buffer);
-		strncpy(&buf[5], buffer, 5);
+		fgStrCpy(&buf[5], buffer, 5);
 	}
 
 	if (datastk.botNav2 == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.nav2, datafg.nav2d, buffer);
-		strncpy(&buf[10], buffer, 5);
+		fgStrCpy(&buf[10], buffer, 5);
 		freqToBuf(datafg.nav2stb, datafg.nav2stbd, buffer);
-		strncpy(&buf[15], buffer, 5);
+		fgStrCpy(&buf[15], buffer, 5);
 	}
 
 	//DME
 	if (datastk.topDme == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.nav2, datafg.nav2d, buffer);
-		strncpy(&buf[0], buffer, 5);
+		fgStrCpy(&buf[0], buffer, 5);
 		freqToBuf(datafg.nav2stb, datafg.nav2stbd, buffer);
-		strncpy(&buf[5], buffer, 5);
+		fgStrCpy(&buf[5], buffer, 5);
 	}
 
 	if (datastk.botDme == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToBuf(datafg.nav2, datafg.nav2d, buffer);
-		strncpy(&buf[10], buffer, 5);
+		fgStrCpy(&buf[10], buffer, 5);
 		freqToBuf(datafg.nav2stb, datafg.nav2stbd, buffer);
-		strncpy(&buf[15], buffer, 5);
+		fgStrCpy(&buf[15], buffer, 5);
 	}
 
 	//XPDR
 	if (datastk.topXpdr == 1) {
-		char buffer[0];
+		unsigned char buffer[5];
 		freqToXPDR(datafg.xpdr, buffer);
-		strncpy(&buf[5], buffer, 5);
+		fgStrCpy(&buf[5], buffer, 5);
 	}
 
 	if (datastk.botXpdr == 1) {
-		char buffer[5];
+		unsigned char buffer[5];
 		freqToXPDR(datafg.xpdr, buffer);
-		strncpy(&buf[10], buffer, 5);
+		fgStrCpy(&buf[10], buffer, 5);
 
 	}
 
@@ -248,7 +260,7 @@ int writeDataStk(struct dataFG datafg, struct dataSTK datastk) {
 
 	res = write(fd, buf, 22);
 
-	printf("RES: %d \n",res);
+//	printf("RES: %d \n",res);
 	return res;
 }
 

@@ -44,9 +44,9 @@ struct dataFG readDataFG() {
 
 	}
 
-	printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
+//	printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
 
-	printf(" data RECEVED :  %s : nbr: %d \n", buffer,recv_len);
+//	printf(" data RECEVED :  %s : nbr: %d \n", buffer,recv_len);
 
 	const char dil[3] = ".,";
 
@@ -337,7 +337,7 @@ void writeDataFG(struct dataFG datafg, struct dataSTK datastk) {
 	strcat(buffer,rotary1pos);
 
 	strcat(buffer,"\n");
-	printf("BUFFER : %s",buffer);
+	//printf("BUFFER : %s",buffer);
 
 	if (sendto(s, buffer, strlen(buffer), 0, (struct sockaddr *) &si_other, slen) == -1) {
 			perror("PError: ");
